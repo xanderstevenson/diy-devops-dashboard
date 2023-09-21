@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DevOps Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 id="devops-dash" class="center-this">DevOps Dashboard</h1>
+    <span class="center-this"><button id="refreshButton">Refresh</button></span>
+    <hr></hr>
+    <div class="dashboard">
+        <span>
+            <h2 class="center-this light-text">GitHub Activity</h2>
+            <div class="dashboard-box repo-list-container">
+                <ul class="repo-list">
+                    {% if repositories %}
+                        {% for repo in repositories %}
+                            <li>
+                                <h3><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></h3>
+                                <p>Latest Commit Date: {{ repo.latest_commit_date }}</p>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <li>No GitHub data available</li>
+                    {% endif %}
+                </ul>
+            </div>
+        </span>
+        <span>
+            <h2 class="center-this light-text">Jenkins Build Status</h2>
+            <div class="dashboard-box jenkins-box center-this">
+                <ul>
+                    {% if jenkins_data %}
+                        <!-- Display Jenkins build status -->
+                        {% for build in jenkins_data.jobs %}
+                            <!-- Create a hyperlink using the build name and Jenkins URL -->
+                            <h3><a href="{{ build.url }}" target="_blank" style="color: {{ build.color }};">{{ build.name }}</a></h3>
+                            <!-- Set the text color based on the build color -->
+                            <p>Status: <span style="color: {{ build.color }};">{{ build.color }}</span></p>
+                            <!-- Add more build information as needed -->
+                        {% endfor %}
+                    {% else %}
+                        <p>No Jenkins data available.</p>
+                    {% endif %}
+                </ul>
+            </div>
+        </span>
+        <span>
+            <!-- Add more dashboard elements as needed -->
+        </span>
+    </div>
+
+    <script>
+        // Refresh the page every 5 minutes (300,000 milliseconds)
+        setInterval(function() {
+            location.reload();
+        }, 300000);
+
+        // Handle refresh button click
+        const refreshButton = document.getElementById('refreshButton');
+        refreshButton.addEventListener('click', function() {
+            location.reload();
+        });
+    </script>
+</body>
+</html>

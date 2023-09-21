@@ -1,0 +1,75 @@
+
+
+body {
+    background-color: #808080;
+}
+
+#devops-dash {
+    border: 2px solid #c9c0bb;
+    background: #f8f8ff;
+    padding: 5px;
+    width: 300px;
+    color: #838996;
+    text-shadow: -1px 1px black;
+    box-shadow: 2px 2px 2px #d3d3d3;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.center-this {
+    text-align: center;
+    display: block;
+    align-content: center;
+    margin: 0px auto;
+}
+
+#refreshButton {
+    margin-bottom: 3px;
+}
+
+.light-text {
+    color: white;
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.repo-list-container {
+    width: 250px;
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    word-wrap: break-word;
+    margin: 10px;
+}
+
+.repo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.repo-list li {
+    margin-bottom: 10px;
+}
+
+.dashboard-box {
+    width: 250px;
+    height: 400px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    align-content: center;
+    background-color: #f8f8ff;
+    border: 2px ridge #e5e4e2;
+}
+
+
+
+
