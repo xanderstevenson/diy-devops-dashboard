@@ -26,6 +26,25 @@
                 </ul>
             </div>
         </span>
+
+        <span>
+            <h2 class="center-this light-text">Docker Status</h2>
+            <div class="dashboard-box center-this">
+                <p>ok</p>
+                <ul>
+                    {% for container in docker_data %}
+                        <li>
+                            <p>Name: {{ container.name }}</p>
+                            <p>Status: {{ container.status }}</p>
+                            <p>ID: {{ container.id }}</p>
+                            <!-- Add more container information as needed -->
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </span>
+        
+
         <span>
             <h2 class="center-this light-text">Jenkins Build Status</h2>
             <div class="dashboard-box jenkins-box center-this">

@@ -1,3 +1,4 @@
+
 # Use the official Python base image with a specific version tag
 FROM python:3.9-slim-buster
 
@@ -10,6 +11,16 @@ WORKDIR /app
 # Copy only the requirements file and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Install the 'sudo' package to have access to administrative commands like 'usermod'
+RUN apt-get update && apt-get install -y sudo
+
+# Create the 'docker' group
+RUN groupadd -r docker
+
+# Create the 'myuser' user and add it to the 'docker' group
+RUN useradd -m -s /bin/bash myuser
+RUN usermod -aG docker myuser
 
 # Copy the rest of the project files to the container
 COPY . .
