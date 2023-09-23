@@ -3,36 +3,21 @@ body {
 }
 
 #header-space {
-  background: white;
+  background: rgb(91, 90, 96);
   height: 90px;
   width: 100%;
   padding-top: 0px auto;
   margin-top: -10px;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start; */
+  background-image: url("sky.jpeg");
+  background-size: cover; /* Adjusts the image size to cover the container */
 }
-
-/* #devops-dash {
-    border: 2px solid #c9c0bb;
-    background: #f8f8ff;
-    padding: 5px;
-    width: 300px;
-    color: #838996;
-    text-shadow: -1px 1px black;
-    box-shadow: 2px 2px 2px #d3d3d3;
-    margin-top: 1px;
-    margin-bottom: 3px;
-    text-align: center;
-} */
 
 #devops-dash {
   border: 2px solid #c9c0bb;
   background: linear-gradient(to bottom, #ffffff, #99b8d2);
   padding: 10px;
   width: 400px;
-  color: #404240;
+  color: #565451;
   text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 2px 4px rgba(81, 81, 73, 0.5);
   margin-top: 10px;
@@ -61,6 +46,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 10px;
 }
 
 .repo-list-container {
