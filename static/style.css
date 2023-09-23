@@ -84,3 +84,17 @@ body {
   background-color: #e9eff1;
   border: 2px ridge #e5e4e2;
 }
+
+.disclaimer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+  height: 25px;
+  background: rgb(91, 90, 96);
+  color: white;
+}
