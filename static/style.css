@@ -35,10 +35,15 @@ body {
 
 #refreshButton {
   margin-bottom: 3px;
+  background: #d4e2eb;
 }
 
 .light-text {
-  color: white;
+  border: 1px solid rgb(230, 223, 223);
+  width: 250px;
+  background: #d4e2eb;
+  color: #565451;
+  border: 2px solid #ccc;
 }
 
 .dashboard {
@@ -76,6 +81,6 @@ body {
   margin: 10px;
   text-align: center;
   align-content: center;
-  background-color: #f8f8ff;
+  background-color: #e9eff1;
   border: 2px ridge #e5e4e2;
 }
