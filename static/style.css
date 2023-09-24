@@ -102,19 +102,26 @@ body {
   height: 25px;
   background: rgb(91, 90, 96);
   color: white;
+  opacity: 0.5;
 }
 
 .github,
 .docker,
 .jenkins,
-.gitlab {
+.gitlab,
+.k8s,
+.terraform,
+.elastic {
   position: relative;
 }
 
 .github::before,
 .docker::before,
 .jenkins::before,
-.gitlab::before {
+.gitlab::before,
+.k8s::before,
+.terraform::before,
+.elastic::before {
   content: "";
   opacity: 0.05; /* adjust the opacity as needed */
   position: absolute;
@@ -141,4 +148,16 @@ body {
 
 .gitlab::before {
   background-image: url("gitlab.png");
+}
+
+.k8s::before {
+  background-image: url("k8s.png");
+}
+
+.terraform::before {
+  background-image: url("terraform.png");
+}
+
+.elastic::before {
+  background-image: url("elasticsearch.png");
 }
