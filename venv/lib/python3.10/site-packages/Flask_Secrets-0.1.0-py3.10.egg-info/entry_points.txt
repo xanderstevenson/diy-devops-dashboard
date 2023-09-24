@@ -1,0 +1,3 @@
+[flask.commands]
+secrets = flask_secrets.cli:secrets
+
