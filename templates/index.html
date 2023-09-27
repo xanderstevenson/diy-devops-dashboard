@@ -51,7 +51,7 @@
                     </li>
                     <li>{{ container.container_id }}</li>
                     <li
-                        class="bottom-pad {% if container.status == 'running' %}status-running{% else %}status-exited{% endif %}">
+                        class="bottom-pad container-text-box {% if container.status == 'running' %}status-running{% else %}status-exited{% endif %}">
                         {{ container.status }}</li>
                     <!-- Add more container information as needed -->
                 </ul>
@@ -90,7 +90,9 @@
                 <h3><a href="{{ build.url }}" target="_blank">{{ build.name }}</a>
                 </h3>
                 <!-- Set the text color based on the build color -->
-                <p class="bottom-pad">Status: <span style="color: {{ build.color }};">{{ build.color }}</span></p>
+                <p class="bottom-pad container-text-box">Status: <span
+                        style="color: {{ build.color }};">{{ build.color }}</span>
+                </p>
                 <!-- Add more build information as needed -->
                 {% endfor %}
                 {% else %}

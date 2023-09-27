@@ -113,6 +113,7 @@ body {
 
 .dashboard a {
   color: black;
+  font-weight: 600;
 }
 
 .repo-list-container {
@@ -135,7 +136,7 @@ body {
 }
 
 .bottom-pad {
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 
 .dashboard-box {
@@ -165,6 +166,14 @@ body {
   font-size: large;
   font-weight: bold;
   color: rgb(59, 59, 65);
+}
+
+.container-text-box {
+  border: 1px solid;
+  padding: 3px;
+  width: 75px;
+  align-content: center;
+  margin: 0px auto;
 }
 
 .disclaimer {
