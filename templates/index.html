@@ -30,8 +30,8 @@
                     {% if repositories %}
                     {% for repo in repositories %}
                     <li>
-                        <h3><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></h3>
-                        <p>Latest Commit: {{ repo.latest_commit_date }}</p>
+                        <h3><a href="{{ repo.url }}" target="_blank">{{ repo.name }}</a></h3>
+                        <p style="padding-bottom: 2px">Latest Commit: {{ repo.latest_commit_date }}</p>
                     </li>
                     {% endfor %}
                     {% else %}
@@ -47,10 +47,9 @@
                 {% if docker_data %}
                 {% for container in docker_data %}
                 <ul class="repo-list">
-                    <h3>
-                        <li class="container-name">{{ container.name }}</a>
-                        </li>
-                    </h3>
+                    <li class="container-name">{{ container.name }}</a>
+                    </li>
+                    <li>{{ container.container_id }}</li>
                     <li
                         class="bottom-pad {% if container.status == 'running' %}status-running{% else %}status-exited{% endif %}">
                         {{ container.status }}</li>
