@@ -20,6 +20,18 @@ def fetch_github_data():
             "GitHub username or access token not set in environment variables"
         )
 
+# Function to fetch GitHub data
+def fetch_github_data():
+    # Get GitHub username and access token from environment variables
+    username = config("GITHUB_USERNAME")
+    access_token = config("GITHUB_ACCESS_TOKEN")
+
+    # Check if the variables are set
+    if username is None or access_token is None:
+        raise ValueError(
+            "GitHub username or access token not set in environment variables"
+        )
+
     # Fetch GitHub repositories
     response = requests.get(
         f"https://api.github.com/users/{username}/repos",
@@ -54,6 +66,9 @@ def fetch_github_data():
                 )
                 repo["latest_commit_date"] = None
 
+            # Generate the URL for the repository
+            repo["url"] = f"https://github.com/{username}/{repo['name']}"
+
         # Sort repositories in descending order by latest_commit_date (most recent first)
         sorted_repositories = sorted(
             repositories,
@@ -70,7 +85,6 @@ def fetch_github_data():
         error_message = f"Failed to fetch repositories. Error: {response.text}"
         return []
 
-
 # Function to fetch Docker data
 def fetch_docker_data():
     try:
@@ -85,8 +99,9 @@ def fetch_docker_data():
 
         for container in containers:
             # Print all attributes of the container
-            for key, value in container.attrs.items():
-                print(f"{key}: {value}")
+            # for key, value in container.attrs.items():
+            #     print(f"{key}: {value}")
+            # print(container.short_id)
             data = {
                 "container_id": container.short_id,
                 "name": container.name,
