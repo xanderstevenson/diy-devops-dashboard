@@ -130,6 +130,10 @@ body {
   margin-bottom: 10px;
 }
 
+.bottom-pad {
+  padding-bottom: 15px;
+}
+
 .dashboard-box {
   width: 250px;
   height: 300px;
@@ -143,6 +147,20 @@ body {
   overflow-y: auto;
   word-wrap: break-word;
   list-style: none;
+}
+
+.status-running {
+  color: green;
+}
+
+.status-exited {
+  color: red; /* You can choose any color you prefer */
+}
+
+.container-name {
+  font-size: large;
+  font-weight: bold;
+  color: rgb(59, 59, 65);
 }
 
 .disclaimer {

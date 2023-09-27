@@ -31,7 +31,7 @@
                     {% for repo in repositories %}
                     <li>
                         <h3><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></h3>
-                        <p>Latest Commit Date: {{ repo.latest_commit_date }}</p>
+                        <p>Latest Commit: {{ repo.latest_commit_date }}</p>
                     </li>
                     {% endfor %}
                     {% else %}
@@ -44,15 +44,17 @@
         <span>
             <h2 class="center-this light-text">Docker Containers</h2>
             <div class="dashboard-box center-this docker">
-                {% if jenkins_data %}
+                {% if docker_data %}
                 {% for container in docker_data %}
-                <ul>
-                    <li>
-                        <p>Name: {{ container.name }}</p>
-                        <p>Status: {{ container.status }}</p>
-                        <p>ID: {{ container.id }}</p>
-                        <!-- Add more container information as needed -->
-                    </li>
+                <ul class="repo-list">
+                    <h3>
+                        <li class="container-name">{{ container.name }}</a>
+                        </li>
+                    </h3>
+                    <li
+                        class="bottom-pad {% if container.status == 'running' %}status-running{% else %}status-exited{% endif %}">
+                        {{ container.status }}</li>
+                    <!-- Add more container information as needed -->
                 </ul>
                 {% endfor %}
                 {% else %}
@@ -74,10 +76,10 @@
                 <!-- Display Jenkins build status -->
                 {% for build in jenkins_data.jobs %}
                 <!-- Create a hyperlink using the build name and Jenkins URL -->
-                <h3><a href="{{ build.url }}" target="_blank" style="color: {{ build.color }};">{{ build.name }}</a>
+                <h3><a href="{{ build.url }}" target="_blank">{{ build.name }}</a>
                 </h3>
                 <!-- Set the text color based on the build color -->
-                <p>Status: <span style="color: {{ build.color }};">{{ build.color }}</span></p>
+                <p class="bottom-pad">Status: <span style="color: {{ build.color }};">{{ build.color }}</span></p>
                 <!-- Add more build information as needed -->
                 {% endfor %}
                 {% else %}
