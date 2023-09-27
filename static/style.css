@@ -111,6 +111,10 @@ body {
   margin-top: 10px;
 }
 
+.dashboard a {
+  color: black;
+}
+
 .repo-list-container {
   width: 250px;
   height: 400px;
