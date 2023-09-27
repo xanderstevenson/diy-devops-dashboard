@@ -66,7 +66,19 @@
         <span>
             <h2 class="center-this light-text">GitLab Projects</h2>
             <div class="dashboard-box center-this gitlab">
-                No GitLab data available
+                <ul class="repo-list">
+                    {% if gitlab_data %}
+                    {% for project in gitlab_data %}
+                    <li>
+                        <h3><a href="{{ project['web_url'] }}" target="_blank">{{ project["name"] }}</a></h3>
+                        <p>Last Activity: {{ project["last_activity_at_mdy"] }}</p>
+                        <p style="margin-top: -15px">{{ project["last_activity_at_hms"] }}</p>
+                    </li>
+                    {% endfor %}
+                    {% else %}
+                    <li>No GitLab data available</li>
+                    {% endif %}
+                </ul>
             </div>
         </span>
         <span>
