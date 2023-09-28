@@ -5,7 +5,7 @@
 
 git clone https://github.com/xanderstevenson/diy-devops-dashboard.git
 
-<br></br>
+<br>
 
 
 2. Go to GitHub -> Click your profile image in the upper-right -> Settings -> Developer Settings -> Personal access tokens and create a new token with the scope of repo, at least.
