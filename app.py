@@ -20,19 +20,6 @@ def fetch_github_data():
             "GitHub username or access token not set in environment variables"
         )
 
-
-# Function to fetch GitHub data
-def fetch_github_data():
-    # Get GitHub username and access token from environment variables
-    username = config("GITHUB_USERNAME")
-    access_token = config("GITHUB_ACCESS_TOKEN")
-
-    # Check if the variables are set
-    if username is None or access_token is None:
-        raise ValueError(
-            "GitHub username or access token not set in environment variables"
-        )
-
     # Fetch GitHub repositories
     response = requests.get(
         f"https://api.github.com/users/{username}/repos",
@@ -193,8 +180,8 @@ def fetch_jenkins_data():
 @app.route("/")
 def index():
     github_data = fetch_github_data()
-    docker_data = fetch_docker_data()  # Fetch Docker data
-    gitlab_data = fetch_gitlab_data()  # Fetch GitLab data
+    docker_data = fetch_docker_data()
+    gitlab_data = fetch_gitlab_data()
     jenkins_data = fetch_jenkins_data()
     return render_template(
         "index.html",
@@ -207,7 +194,23 @@ def index():
 
 @app.route("/credentials.html")
 def credentials():
-    return render_template("credentials.html")
+    # Read environment variables from .env file
+    github_username = config("GITHUB_USERNAME")
+    github_access_token = config("GITHUB_ACCESS_TOKEN")
+    jenkins_token = config("JENKINS_TOKEN")
+    gitlab_token = config("GITLAB_TOKEN")
+    gitlab_username = config("GITLAB_USERNAME")
+    gitlab_group_id = config("GITLAB_GROUP_ID")
+
+    return render_template(
+        "credentials.html",
+        github_username=github_username,
+        github_access_token=github_access_token,
+        jenkins_token=jenkins_token,
+        gitlab_token=gitlab_token,
+        gitlab_username=gitlab_username,
+        gitlab_group_id=gitlab_group_id,
+    )
 
 
 if __name__ == "__main__":
