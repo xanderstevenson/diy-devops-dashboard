@@ -13,7 +13,7 @@
 
 3. Place your token credentials in the .env-example file and rename it to .env
 
-`GITHUB_USERNAME="your_username"'<br>
+`GITHUB_USERNAME="your_username"`<br>
 `GITHUB_ACCESS_TOKEN="your_access_token"`<br>
 `...`<br>
 ...
