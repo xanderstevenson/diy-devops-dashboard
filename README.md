@@ -5,7 +5,7 @@ Do-It-Yourself (DIY) DevOps Dashboard
 
 git clone https://github.com/xanderstevenson/diy-devops-dashboard.git
 
-2. Go to GitHub  Click your profile image in the upper-right  Settings  Developer Settings  Personal access tokens and create a new token with the scope of repo, at least.
+2. Go to GitHub  Click your profile image in the upper-right -> Settings  Developer Settings  Personal access tokens and create a new token with the scope of repo, at least.
 
 3. Place your token credentials in the .env-example file and rename it to .env
 
