@@ -18,12 +18,13 @@ GITHUB_ACCESS_TOKEN="your_access_token"
 ...
 ...
 
+<br>
 
 4. Build the Docker image by running the following command in the project directory:
 
 docker build -t repo-visualizer .
 
-
+<br>
 
 5. Run the Docker container by executing the following. command:
 
