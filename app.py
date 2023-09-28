@@ -20,6 +20,7 @@ def fetch_github_data():
             "GitHub username or access token not set in environment variables"
         )
 
+
 # Function to fetch GitHub data
 def fetch_github_data():
     # Get GitHub username and access token from environment variables
@@ -68,7 +69,6 @@ def fetch_github_data():
 
             # Generate the URL for the repository
             repo["url"] = f"https://github.com/{username}/{repo['name']}"
-
         # Sort repositories in descending order by latest_commit_date (most recent first)
         sorted_repositories = sorted(
             repositories,
@@ -84,6 +84,7 @@ def fetch_github_data():
     else:
         error_message = f"Failed to fetch repositories. Error: {response.text}"
         return []
+
 
 # Function to fetch Docker data
 def fetch_docker_data():
