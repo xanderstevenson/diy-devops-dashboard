@@ -1,5 +1,5 @@
 body {
-  background-color: #808080;
+  background-color: #000000;
 }
 
 h3 {
@@ -42,6 +42,7 @@ h3 {
   border: 1px solid #ddd;
   z-index: 1;
   min-width: 75px;
+  height: 30px;
   opacity: 0.5; /* adjust the opacity as needed */
 }
 

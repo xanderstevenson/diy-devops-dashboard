@@ -108,8 +108,22 @@
         <span>
             <h2 class="center-this light-text">Terraform Resources</h2>
             <div class="dashboard-box center-this terraform">
-                No Terraform data available
+                {% if terraform_data %}
+                {% for org in terraform_data %}
+                <ul class="repo-list">
+                    <p>
+                        <li>Org: {{ org.id }}</a>
+                    </p>
+                    </li>
+                    <!-- Add more container information as needed -->
+                </ul>
+                {% endfor %}
+                {% else %}
+                <p>No Terraform data available</p>
+                {% endif %}
+
             </div>
+        </span>
         </span>
         <span>
             <h2 class="center-this light-text">Elasticsearch</h2>

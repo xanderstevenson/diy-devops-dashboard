@@ -1,4 +1,5 @@
 import docker
+import json
 import requests
 import schedule
 import time
@@ -177,18 +178,47 @@ def fetch_jenkins_data():
     return {}
 
 
+def fetch_terraform_data():
+    TOKEN = config("TERRAFORM_TOKEN")
+    # Define the URL for TFC organizations
+    url = "https://app.terraform.io/api/v2/organizations/"
+    headers = {
+        "Authorization": "Bearer " + TOKEN,
+        "Content-Type": "application/vnd.api+json",
+    }
+
+    try:
+        # Send a GET request to fetch TFC organizations
+        TFCListresponse = requests.get(url, headers=headers)
+        if TFCListresponse.status_code == 200:
+            print("Got a successful response...")
+            my_orgs = json.loads(TFCListresponse.content.decode("utf-8"))
+            terraform_data = my_orgs["data"]
+            return terraform_data
+        else:
+            print("Failed to get the required response...")
+            print(TFCListresponse.content)
+    except requests.exceptions.RequestException as e:
+        print(f"Request error: {e}")
+
+    # Return None if there was an error
+    return None
+
+
 @app.route("/")
 def index():
     github_data = fetch_github_data()
     docker_data = fetch_docker_data()
     gitlab_data = fetch_gitlab_data()
     jenkins_data = fetch_jenkins_data()
+    terraform_data = fetch_terraform_data()
     return render_template(
         "index.html",
         repositories=github_data,
         docker_data=docker_data,
         gitlab_data=gitlab_data,
         jenkins_data=jenkins_data,
+        terraform_data=terraform_data,
     )
 
 

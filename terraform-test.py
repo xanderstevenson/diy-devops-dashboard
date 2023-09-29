@@ -1,4 +1,3 @@
-python
 import subprocess
 import json
 
@@ -6,11 +5,16 @@ import json
 def get_resources():
     try:
         # Run the Terraform command to output the resource state in JSON format
-        cmd = ["terraform", "state", "pull", "-json"]
+        cmd = ["terraform", "state", "pull"]
         result = subprocess.run(cmd, capture_output=True, text=True)
 
         # Check if the command was successful
         if result.returncode == 0:
+            # Check if the JSON output is empty
+            if not result.stdout.strip():
+                print("No resources found in Terraform state.")
+                return []
+
             # Parse the JSON output
             output = json.loads(result.stdout)
 
