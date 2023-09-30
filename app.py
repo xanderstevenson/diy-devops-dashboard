@@ -181,23 +181,43 @@ def fetch_jenkins_data():
 def fetch_terraform_data():
     TOKEN = config("TERRAFORM_TOKEN")
     # Define the URL for TFC organizations
-    url = "https://app.terraform.io/api/v2/organizations/"
+    org_url = "https://app.terraform.io/api/v2/organizations/"
     headers = {
         "Authorization": "Bearer " + TOKEN,
         "Content-Type": "application/vnd.api+json",
     }
-
     try:
         # Send a GET request to fetch TFC organizations
-        TFCListresponse = requests.get(url, headers=headers)
-        if TFCListresponse.status_code == 200:
-            print("Got a successful response...")
-            my_orgs = json.loads(TFCListresponse.content.decode("utf-8"))
-            terraform_data = my_orgs["data"]
-            return terraform_data
+        org_response = requests.get(org_url, headers=headers)
+        if org_response.status_code == 200:
+            print("Got a successful response for organizations...")
+            orgs_data = json.loads(org_response.content.decode("utf-8"))
+
+            terraform_data = []
+
+            # Iterate over organizations to fetch workspaces
+            for org in orgs_data["data"]:
+                org_id = org["id"]
+                workspace_url = (
+                    f"https://app.terraform.io/api/v2/organizations/{org_id}/workspaces"
+                )
+                workspace_response = requests.get(workspace_url, headers=headers)
+
+                if workspace_response.status_code == 200:
+                    print(f"Got workspaces for organization {org_id}...")
+                    workspaces_data = json.loads(
+                        workspace_response.content.decode("utf-8")
+                    )
+                    org["workspaces"] = workspaces_data["data"]
+                else:
+                    print(f"Failed to fetch workspaces for organization {org_id}...")
+                    org["workspaces"] = []
+            print(f"orgs_data = { orgs_data }")
+            print(f"workspaces_dat = { workspaces_data }")
+            return orgs_data["data"]
         else:
-            print("Failed to get the required response...")
-            print(TFCListresponse.content)
+            print("Failed to get the required response for organizations...")
+            print(org_response.content)
     except requests.exceptions.RequestException as e:
         print(f"Request error: {e}")
 
