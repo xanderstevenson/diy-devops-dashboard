@@ -29,9 +29,10 @@
                 <ul class="repo-list">
                     {% if repositories %}
                     {% for repo in repositories %}
-                    <li>
+                    <li class="one-px-border mini-box-background">
                         <h3><a href="{{ repo.url }}" target="_blank">{{ repo.name }}</a></h3>
-                        <p style="padding-bottom: 2px">Latest Commit: {{ repo.latest_commit_date }}</p>
+                        <p style="padding-bottom: 2px"><span class="blue-text">Latest Commit:
+                            </span>{{ repo.latest_commit_date }}</p>
                     </li>
                     {% endfor %}
                     {% else %}
@@ -45,7 +46,7 @@
             <div class="dashboard-box center-this docker">
                 {% if docker_data %}
                 {% for container in docker_data %}
-                <ul class="repo-list">
+                <ul class="repo-list one-px-border" style="padding-top: 5px;">
                     <li class="container-name">{{ container.name }}</a>
                     </li>
                     <li>{{ container.container_id }}</li>
@@ -67,7 +68,7 @@
                 <ul class="repo-list">
                     {% if gitlab_data %}
                     {% for project in gitlab_data %}
-                    <li>
+                    <li class="one-px-border">
                         <h3><a href="{{ project['web_url'] }}" target="_blank">{{ project["name"] }}</a></h3>
                         <p>Last Activity: {{ project["last_activity_at_mdy"] }}</p>
                         <p style="margin-top: -15px">{{ project["last_activity_at_hms"] }}</p>
@@ -85,14 +86,15 @@
                 {% if jenkins_data %}
                 <!-- Display Jenkins build status -->
                 {% for build in jenkins_data.jobs %}
-                <!-- Create a hyperlink using the build name and Jenkins URL -->
-                <h3><a href="{{ build.url }}" target="_blank">{{ build.name }}</a>
-                </h3>
-                <!-- Set the text color based on the build color -->
-                <p class="bottom-pad container-text-box">Status: <span
-                        style="color: {{ build.color }};">{{ build.color }}</span>
-                </p>
-                <!-- Add more build information as needed -->
+                <div class="one-px-border bottom-pad" style="margin-bottom: 5px;">
+                    <h3><a href="{{ build.url }}" target="_blank">{{ build.name }}</a>
+                    </h3>
+                    <!-- Set the text color based on the build color -->
+                    <p class="bottom-pad container-text-box">Status: <span
+                            style="color: {{ build.color }};">{{ build.color }}</span>
+                    </p>
+                    <!-- Add more build information as needed -->
+                </div>
                 {% endfor %}
                 {% else %}
                 <p>No Jenkins data available.</p>
@@ -101,8 +103,25 @@
         </span>
         <span>
             <h2 class="center-this light-text">Kubernetes Pods</h2>
-            <div class="dashboard-box center-this k8s">
-                No Kubernetes data available
+            <div class="dashboard-box center-this terraform">
+                {% if kubernetes_data %}
+                {% for resource in kubernetes_data %}
+                <ul class="repo-list one-px-border">
+                    <h3 class="center-this"><span class="blue-text">Namespace: {{ resource.namespace }}</span></h3>
+                    <h4 class="blue-text">Pods:</h4>
+                    <ul class="repo-list">
+                        {% for pod in resource %}
+                        <li>
+                            <p>{{ pod }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <!-- Add more container information as needed -->
+                </ul>
+                {% endfor %}
+                {% else %}
+                <p>No K8s data available</p>
+                {% endif %}
             </div>
         </span>
         <span>
@@ -110,7 +129,7 @@
             <div class="dashboard-box center-this terraform">
                 {% if terraform_data %}
                 {% for org in terraform_data %}
-                <ul class="repo-list" style="padding-bottom: 2px;">
+                <ul class="repo-list one-px-border">
                     <p>
                         <h3><span class="blue-text">Org: </span>{{ org.id }}</h3>
                     </p>

@@ -7,7 +7,17 @@ h3 {
 }
 
 .blue-text {
-  color: rgb(19, 19, 172);
+  color: rgb(30, 66, 172);
+}
+
+.one-px-border {
+  /* border: 1px solid gray; */
+  border: 1px solid rgba(34, 43, 55, 0.3);
+  background-color: rgba(46, 102, 182, 0.1);
+}
+
+.one-px-border p h3 ul li {
+  color: black;
 }
 
 .navbar {
@@ -195,7 +205,7 @@ h3 {
   text-align: center;
   font-size: 14px;
   height: 25px;
-  background: rgb(11, 11, 22);
+  background: rgb(57, 71, 111);
   color: white;
   opacity: 0.5;
 }

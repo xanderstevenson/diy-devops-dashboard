@@ -1,11 +1,15 @@
 import docker
 import json
+import os
 import requests
 import schedule
 import time
 from decouple import config
 from datetime import datetime
 from flask import Flask, render_template, current_app
+from kubernetes import client, config as kubernetes_config
+
+os.environ["KUBECONFIG"] = "/root/.kube/config"
 
 app = Flask(__name__)  # Create the Flask app instance
 
@@ -104,11 +108,6 @@ def fetch_docker_data():
         print(f"Failed to fetch Docker data: {e}")
         return []
 
-        return docker_data
-    except docker.errors.APIError as e:
-        print(f"Failed to fetch Docker data: {e}")
-        return []
-
 
 # Function to fetch GitLab data
 def fetch_gitlab_data():
@@ -178,6 +177,46 @@ def fetch_jenkins_data():
     return {}
 
 
+# Function to fetch Kubernetes data in JSON format
+def fetch_kubernetes_data(namespace="default"):
+    try:
+        # Specify the path to your kubeconfig file
+        kubeconfig_path = "/k8s/config"
+
+        # Load Kubernetes configuration from the specified kubeconfig file
+        kubernetes_config.load_kube_config(config_file=kubeconfig_path)
+
+        # Create an instance of the Kubernetes API client
+        api_instance = client.CoreV1Api()
+
+        # List all namespaces
+        namespaces = api_instance.list_namespace()
+
+        kubernetes_data = {}  # Initialize a dictionary
+
+        for namespace in namespaces.items:
+            # List resources in the current namespace
+            resources = api_instance.list_namespaced_pod(namespace.metadata.name)
+
+            # Only display namespaces with pods
+            if resources.items:
+                namespace_name = namespace.metadata.name
+                pod_data = []  # Initialize a list for pod data in the namespace
+
+                for resource in resources.items:
+                    pod_name = resource.metadata.name
+                    pod_data.append(pod_name)
+
+                # Add pod data to the dictionary using the namespace name as the key
+                kubernetes_data[namespace_name] = pod_data
+
+        return kubernetes_data
+
+    except Exception as e:
+        print(f"Failed to fetch Kubernetes data: {e}")
+
+
+# Function to fetch Terraform data
 def fetch_terraform_data():
     TOKEN = config("TERRAFORM_TOKEN")
     # Define the URL for TFC organizations
@@ -212,8 +251,6 @@ def fetch_terraform_data():
                 else:
                     print(f"Failed to fetch workspaces for organization {org_id}...")
                     org["workspaces"] = []
-            print(f"orgs_data = { orgs_data }")
-            print(f"workspaces_dat = { workspaces_data }")
             return orgs_data["data"]
         else:
             print("Failed to get the required response for organizations...")
@@ -232,6 +269,7 @@ def index():
     gitlab_data = fetch_gitlab_data()
     jenkins_data = fetch_jenkins_data()
     terraform_data = fetch_terraform_data()
+    kubernetes_data = fetch_kubernetes_data()
     return render_template(
         "index.html",
         repositories=github_data,
@@ -239,6 +277,7 @@ def index():
         gitlab_data=gitlab_data,
         jenkins_data=jenkins_data,
         terraform_data=terraform_data,
+        kubernetes_data=kubernetes_data,
     )
 
 
@@ -268,6 +307,8 @@ if __name__ == "__main__":
     schedule.every(5).minutes.do(fetch_docker_data)
     schedule.every(5).minutes.do(fetch_gitlab_data)
     schedule.every(5).minutes.do(fetch_jenkins_data)
+    schedule.every(5).minutes.do(fetch_terraform_data)
+    schedule.every(5).minutes.do(fetch_kubernetes_data)
 
     import threading
 

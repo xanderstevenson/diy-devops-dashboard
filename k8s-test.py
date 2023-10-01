@@ -1,48 +1,35 @@
-python
-import requests
+from kubernetes import config as kubernetes_config
+from kubernetes import client
 
 
-def get_pods():
-    # Define the Kubernetes API endpoint for pods
-    api_url = "https://your-kubernetes-cluster/api/v1/pods"
-
-    # Set the required headers for authentication and content type
-    headers = {
-        "Authorization": "Bearer your-auth-token",
-        "Content-Type": "application/json",
-    }
-
+def list_resources_in_all_namespaces_with_pods():
     try:
-        # Send a GET request to the Kubernetes API to retrieve pod information
-        response = requests.get(api_url, headers=headers)
+        # Load Kubernetes configuration from the specified kubeconfig file
+        kubeconfig_path = "/Users/xander/.kube/config"
+        kubernetes_config.load_kube_config(config_file=kubeconfig_path)
 
-        # Check if the request was successful (status code 200)
-        if response.status_code == 200:
-            # Parse the response JSON
-            data = response.json()
+        # Create an instance of the Kubernetes API client
+        api_instance = client.CoreV1Api()
 
-            # Extract relevant information from the response
-            pods = []
-            for pod in data.get("items", []):
-                pod_name = pod.get("metadata", {}).get("name")
-                pod_status = pod.get("status", {}).get("phase")
-                pods.append({"name": pod_name, "status": pod_status})
+        # List all namespaces
+        namespaces = api_instance.list_namespace()
 
-            # Return the list of pods
-            return pods
-        else:
-            # If the request was not successful, print the error message
-            print(f"Error: {response.status_code} - {response.text}")
+        for namespace in namespaces.items:
+            # List resources in the current namespace
+            resources = api_instance.list_namespaced_pod(namespace.metadata.name)
 
-    except requests.exceptions.RequestException as e:
-        # If an error occurred during the request, print the exception
-        print(f"Request Error: {e}")
+            # Only display namespaces with pods
+            if resources.items:
+                print(f"Namespace: {namespace.metadata.name}")
+                print("Resources:")
 
-    # Return an empty list if there was an error
-    return []
+                for resource in resources.items:
+                    print(f"  Pod: {resource.metadata.name}")
+
+                print("\n")
+
+    except Exception as e:
+        print(f"Failed to fetch Kubernetes data: {e}")
 
 
-# Example usage
-pods = get_pods()
-for pod in pods:
-    print(f"Pod Name: {pod['name']}, Status: {pod['status']}")
+list_resources_in_all_namespaces_with_pods()
