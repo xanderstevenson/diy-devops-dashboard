@@ -3,11 +3,28 @@ body {
 }
 
 h3 {
-  font-weight: 600;
+  font-weight: bold;
+  color: rgb(63, 63, 63);
+}
+
+h3 a {
+  color: rgb(63, 63, 63);
+  font-weight: normal;
+}
+
+a {
+  border: 1px outset;
+  text-decoration: none;
+  padding: 4px;
+  font-weight: normal;
+  background: rgb(171, 193, 212, 0.5);
+  line-height: 1.75;
+  color: rgb(63, 63, 63);
 }
 
 .blue-text {
   color: rgb(30, 66, 172);
+  font-weight: bold;
 }
 
 .one-px-border {
@@ -188,7 +205,7 @@ h3 {
 }
 
 .container-text-box {
-  border: 1px solid;
+  /* border: 1px solid; */
   padding: 3px;
   width: 75px;
   align-content: center;
@@ -238,6 +255,7 @@ h3 {
   background-repeat: no-repeat;
   background-position: center;
   pointer-events: none; /* This line makes the pseudo-elements non-clickable */
+  /* background-attachment: ; */
 }
 
 .github::before {

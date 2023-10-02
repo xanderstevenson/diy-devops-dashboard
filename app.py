@@ -216,6 +216,13 @@ def fetch_kubernetes_data(namespace="default"):
         print(f"Failed to fetch Kubernetes data: {e}")
 
 
+# Example usage:
+k8s_data = fetch_kubernetes_data()
+if k8s_data:
+    k8s_json = json.dumps(k8s_data, indent=4)
+    print(k8s_json)  # Print the JSON data
+
+
 # Function to fetch Terraform data
 def fetch_terraform_data():
     TOKEN = config("TERRAFORM_TOKEN")
