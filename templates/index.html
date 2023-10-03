@@ -109,7 +109,8 @@
                 {% if kubernetes_data %}
                 {% for namespace_name, pod_names in kubernetes_data.items() %}
                 <ul class="repo-list one-px-border">
-                    <h3 class="center-this"><span class="blue-text">Namespace: </span>{{ namespace_name }}</h3>
+                    <h3 class="center-this container-name"><span class="blue-text">Namespace:
+                        </span>{{ namespace_name }}</h3>
                     <h4 class="blue-text">Pods:</h4>
                     <ul class="repo-list">
                         {% for pod_name in pod_names %}
@@ -133,7 +134,7 @@
                 {% for org in terraform_data %}
                 <ul class="repo-list one-px-border">
                     <p>
-                        <h3><span class="blue-text">Org: </span>{{ org.id }}</h3>
+                        <h3 class="container-name"><span class="blue-text">Org: </span>{{ org.id }}</h3>
                     </p>
                     <h4 class="blue-text">Workspaces:</h4>
                     <ul class="repo-list">
@@ -156,7 +157,26 @@
         <span>
             <h2 class="center-this light-text">Elasticsearch</h2>
             <div class="dashboard-box center-this elastic">
-                No Elasticsearch data available
+                {% if elastic_data %}
+                {% for deployment in elastic_data.deployments %}
+                <ul class="repo-list one-px-border">
+                    <p>
+                        <h3 class="container-name"><span class="blue-text">Deployment: </span>{{ deployment.name }}</h3>
+                    </p>
+                    <h4 class="blue-text">Resources:</h4>
+                    <ul class="repo-list">
+                        {% for resource in deployment.resources %}
+                        <li>
+                            <p></p>{{ resource.ref_id }}</p>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <!-- Add more container information as needed -->
+                </ul>
+                {% endfor %}
+                {% else %}
+                <p>No Elasticsearch data available</p>
+                {% endif %}
             </div>
         </span>
     </div>

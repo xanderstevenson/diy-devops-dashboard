@@ -12,6 +12,11 @@ h3 a {
   font-weight: normal;
 }
 
+li h3 a {
+  color: rgb(63, 63, 63);
+  font-weight: normal;
+}
+
 a {
   border: 1px outset;
   text-decoration: none;
@@ -201,7 +206,7 @@ a {
 .container-name {
   font-size: large;
   font-weight: bold;
-  color: rgb(59, 59, 65);
+  color: rgb(14, 14, 14);
 }
 
 .container-text-box {

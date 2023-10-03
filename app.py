@@ -269,6 +269,40 @@ def fetch_terraform_data():
     return None
 
 
+# Function to fetch Elastic Cloud deployment data
+def fetch_elastic_data():
+    # Get the Elastic API key from environment variables
+    elastic_api_key = config("ELASTIC_API_KEY")
+
+    # Check if the API key is set
+    if elastic_api_key is None:
+        raise ValueError("Elastic API key not set in environment variables")
+
+    # Define the API endpoint URL
+    elastic_api_url = "https://api.elastic-cloud.com/api/v1/deployments"
+
+    # Define headers with the API key
+    headers = {
+        "Authorization": f"ApiKey {elastic_api_key}",
+    }
+
+    try:
+        # Send a GET request to fetch Elastic Cloud deployments
+        response = requests.get(elastic_api_url, headers=headers)
+
+        if response.status_code == 200:
+            elastic_data = response.json()
+            return elastic_data
+        else:
+            print(
+                f"Failed to fetch Elastic Cloud deployments. Status code: {response.status_code}"
+            )
+            return {}
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to connect to Elastic Cloud API: {e}")
+        return {}
+
+
 @app.route("/")
 def index():
     github_data = fetch_github_data()
@@ -277,6 +311,7 @@ def index():
     jenkins_data = fetch_jenkins_data()
     terraform_data = fetch_terraform_data()
     kubernetes_data = fetch_kubernetes_data()
+    elastic_data = fetch_elastic_data()
     return render_template(
         "index.html",
         repositories=github_data,
@@ -285,6 +320,7 @@ def index():
         jenkins_data=jenkins_data,
         terraform_data=terraform_data,
         kubernetes_data=kubernetes_data,
+        elastic_data=elastic_data,
     )
 
 
@@ -316,6 +352,7 @@ if __name__ == "__main__":
     schedule.every(5).minutes.do(fetch_jenkins_data)
     schedule.every(5).minutes.do(fetch_terraform_data)
     schedule.every(5).minutes.do(fetch_kubernetes_data)
+    schedule.every(5).minutes.do(fetch_elastic_data)
 
     import threading
 
