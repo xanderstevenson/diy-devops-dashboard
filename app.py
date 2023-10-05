@@ -177,52 +177,6 @@ def fetch_jenkins_data():
     return {}
 
 
-# Function to fetch Kubernetes data in JSON format
-def fetch_kubernetes_data(namespace="default"):
-    try:
-        # Specify the path to your kubeconfig file
-        kubeconfig_path = "/k8s/config"
-
-        # Load Kubernetes configuration from the specified kubeconfig file
-        kubernetes_config.load_kube_config(config_file=kubeconfig_path)
-
-        # Create an instance of the Kubernetes API client
-        api_instance = client.CoreV1Api()
-
-        # List all namespaces
-        namespaces = api_instance.list_namespace()
-
-        kubernetes_data = {}  # Initialize a dictionary
-
-        for namespace in namespaces.items:
-            # List resources in the current namespace
-            resources = api_instance.list_namespaced_pod(namespace.metadata.name)
-
-            # Only display namespaces with pods
-            if resources.items:
-                namespace_name = namespace.metadata.name
-                pod_data = []  # Initialize a list for pod data in the namespace
-
-                for resource in resources.items:
-                    pod_name = resource.metadata.name
-                    pod_data.append(pod_name)
-
-                # Add pod data to the dictionary using the namespace name as the key
-                kubernetes_data[namespace_name] = pod_data
-
-        return kubernetes_data
-
-    except Exception as e:
-        print(f"Failed to fetch Kubernetes data: {e}")
-
-
-# Example usage:
-k8s_data = fetch_kubernetes_data()
-if k8s_data:
-    k8s_json = json.dumps(k8s_data, indent=4)
-    print(k8s_json)  # Print the JSON data
-
-
 # Function to fetch Terraform data
 def fetch_terraform_data():
     TOKEN = config("TERRAFORM_TOKEN")
@@ -310,7 +264,6 @@ def index():
     gitlab_data = fetch_gitlab_data()
     jenkins_data = fetch_jenkins_data()
     terraform_data = fetch_terraform_data()
-    kubernetes_data = fetch_kubernetes_data()
     elastic_data = fetch_elastic_data()
     return render_template(
         "index.html",
@@ -319,29 +272,7 @@ def index():
         gitlab_data=gitlab_data,
         jenkins_data=jenkins_data,
         terraform_data=terraform_data,
-        kubernetes_data=kubernetes_data,
         elastic_data=elastic_data,
-    )
-
-
-@app.route("/credentials.html")
-def credentials():
-    # Read environment variables from .env file
-    github_username = config("GITHUB_USERNAME")
-    github_access_token = config("GITHUB_ACCESS_TOKEN")
-    jenkins_token = config("JENKINS_TOKEN")
-    gitlab_token = config("GITLAB_TOKEN")
-    gitlab_username = config("GITLAB_USERNAME")
-    gitlab_group_id = config("GITLAB_GROUP_ID")
-
-    return render_template(
-        "credentials.html",
-        github_username=github_username,
-        github_access_token=github_access_token,
-        jenkins_token=jenkins_token,
-        gitlab_token=gitlab_token,
-        gitlab_username=gitlab_username,
-        gitlab_group_id=gitlab_group_id,
     )
 
 
@@ -351,7 +282,6 @@ if __name__ == "__main__":
     schedule.every(5).minutes.do(fetch_gitlab_data)
     schedule.every(5).minutes.do(fetch_jenkins_data)
     schedule.every(5).minutes.do(fetch_terraform_data)
-    schedule.every(5).minutes.do(fetch_kubernetes_data)
     schedule.every(5).minutes.do(fetch_elastic_data)
 
     import threading
