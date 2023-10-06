@@ -24,6 +24,7 @@
 ```docker build -t diy-devops-dashboard .```
 <br>
 
+
 5. Run the Docker container by executing the following. command:
 
 ```docker run --name diy-devops-dashboard -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 diy-devops-dashboard```
