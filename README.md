@@ -4,7 +4,7 @@
 
 ## Description
 
-I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. It requires setting up the basic technologies and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle.
+I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. It requires setting up the basic technologies and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle. <b>This project if for demos purposes only and should not be used in a production environment.</b>
 
 <br>
 
