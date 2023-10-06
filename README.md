@@ -3,7 +3,7 @@
 ## Do-It-Yourself (DIY) DevOps Dashboard
 
 <p align="center">
-![image](https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/3fa23d01-5f42-42a2-98ff-50aba621be3f)
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/3fa23d01-5f42-42a2-98ff-50aba621be3f">
 </p>
 
 ### Description
