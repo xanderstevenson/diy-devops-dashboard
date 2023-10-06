@@ -80,10 +80,10 @@ Text within each section that is surrounded by box is clickable and will take yo
 
 More blocks for additional tools can be added to [templates/index.html](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/templates/index.html) and a additional functions would need to be added to [app.py](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/app.py)
 
-
+<br>
 ## Disclaimer
 <br>
 
 <p align="center">
-  <em><strong style="color: blue;">*** This project is for demo purposes only and should not be used in a production environment. ***</strong></em>
+  <em><strong style="color: blue;">This project is for demo purposes only and should not be used in a production environment.</strong></em>
 </p>
