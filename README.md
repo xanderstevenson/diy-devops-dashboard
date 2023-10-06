@@ -1,7 +1,8 @@
-<p align="center">
+
 # diy-devops-dashboard
 ## Do-It-Yourself (DIY) DevOps Dashboard
 
+<p align="center">
 ![image](https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/b75ac0ae-1afa-4e4c-b8a4-d89b9d37a588)
 </p>
 
