@@ -61,7 +61,7 @@ This command starts the container and forwards the container's port 8000 to the 
 3. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
 
 <p align="center">
-<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/713de122-8a0b-4596-afa7-ae0092703cc3" width="700" align-content="center">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/713de122-8a0b-4596-afa7-ae0092703cc3" width="700">
 </p>
 
 <br>
@@ -74,5 +74,7 @@ This command starts the container and forwards the container's port 8000 to the 
 
 Every text within each section that is surrounded by box is clickable and will take you to the web page for that resourc,
 
-![image](https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a)
+<p align="center">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a" width="500">
+</p>
 
