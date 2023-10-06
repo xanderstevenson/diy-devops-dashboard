@@ -1,11 +1,14 @@
 # Standard library imports
+import base64
 from datetime import datetime
 import json
+import os
+import logging
 import time
 
 # Related third-party imports
 from decouple import config
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import docker
 import requests
 import schedule
@@ -273,14 +276,35 @@ def index():
         elastic_data=elastic_data,
     )
 
+@app.route('/screenshot', methods=['POST'])
+def handle_screenshot():
+    try:
+        image_data = request.form['image']
+        root_dir = os.path.abspath(os.path.dirname(__file__))
+        file_path = os.path.join(root_dir, 'screenshot.png')
+
+        # Save the image data to a file
+        with open(file_path, 'wb') as f:
+            f.write(image_data.split(",")[1].decode('base64'))
+
+        # Return a success response
+        return 'Screenshot saved'
+
+    except Exception as e:
+        # Log the error
+        logging.exception(f'An error occurred: {str(e)}')
+
+        # Return an error response
+        return 'Error occurred while saving the screenshot', 500
+
 
 if __name__ == "__main__":
-    schedule.every(5).minutes.do(fetch_github_data)
-    schedule.every(5).minutes.do(fetch_docker_data)
-    schedule.every(5).minutes.do(fetch_gitlab_data)
-    schedule.every(5).minutes.do(fetch_jenkins_data)
-    schedule.every(5).minutes.do(fetch_terraform_data)
-    schedule.every(5).minutes.do(fetch_elastic_data)
+#     schedule.every(5).minutes.do(fetch_github_data)
+#     schedule.every(5).minutes.do(fetch_docker_data)
+#     schedule.every(5).minutes.do(fetch_gitlab_data)
+#     schedule.every(5).minutes.do(fetch_jenkins_data)
+#     schedule.every(5).minutes.do(fetch_terraform_data)
+#     schedule.every(5).minutes.do(fetch_elastic_data)
 
     import threading
 

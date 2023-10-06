@@ -16,7 +16,7 @@
                 <div class="line"></div>
             </div>
             <ul class="menu" id="menu">
-                <li></li>
+                <li><button id="captureButton" onclick="captureScreenshot()">Capture Screenshot</button></li>
             </ul>
         </nav>
         <h1 id="devops-dash" class="center-this">DIY DevOps Dashboard</h1>
@@ -156,7 +156,7 @@
             </div>
         </span>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
     <script>
         // Refresh the page every 5 minutes (300,000 milliseconds)
         setInterval(function () {
@@ -168,7 +168,30 @@
         refreshButton.addEventListener('click', function () {
             location.reload();
         });
+
+        // Hande Screen capture
+        function captureScreenshot() {
+            html2canvas(document.body).then(function(canvas) {
+                // Convert the canvas to an image
+                var image = canvas.toDataURL();
+
+                // Send the image data to the server using Ajax or a form submission
+                // You can use JavaScript libraries like Axios or jQuery for Ajax requests
+
+                // Example using jQuery:
+                $.ajax({
+                    type: "POST",
+                    url: "/screenshot",
+                    data: { image: image },
+                    success: function(response) {
+                        // Handle the response from the server if needed
+                    }
+                });
+            });
+        }
+
     </script>
+
 </body>
 
 </html>
