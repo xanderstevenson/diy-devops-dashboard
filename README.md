@@ -1,6 +1,9 @@
 # diy-devops-dashboard
 ## Do-It-Yourself (DIY) DevOps Dashboard
 
+![image](https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/b75ac0ae-1afa-4e4c-b8a4-d89b9d37a588)
+
+
 ### Description
 
 I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. It requires setting up the basic technologies and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle.
