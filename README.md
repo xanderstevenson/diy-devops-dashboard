@@ -85,7 +85,11 @@ This command starts the container and forwards the container's port 8000 to the 
 <img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a" width="500">
 </p>
 
-- The entire page will reload every 5 minutes, thanks to the JavaScript at the bottom of /templats/index.html. You can also refresh the page manually by clicking on the "Refresh" button under the marquee at the top of the page. Both actions reload the data to be presented.
+- The entire page will reload every 5 minutes, thanks to the JavaScript at the bottom of /templates/index.html. You can also refresh the page manually by clicking on the "Refresh" button under the marquee at the top of the page.
+
+<img width="400" src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/afba8a5a-f0ab-4d79-84b2-b8ae58d8bf21">
+
+Both actions reload the data to be presented.
 
 
 - More blocks for additional tools can be added to [templates/index.html](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/templates/index.html) and a additional functions would need to be added to [app.py](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/app.py)
