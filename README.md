@@ -18,7 +18,9 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 1. Create a virtual environment locally and activate it.
 
 2. Clone this repo and cd into it.
+
 ```git clone https://github.com/xanderstevenson/diy-devops-dashboard.git```
+
 ```cd diy-devops-dashboard```
 
 <br>
