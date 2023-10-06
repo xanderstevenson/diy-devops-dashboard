@@ -1,5 +1,3 @@
-
-# diy-devops-dashboard
 <h2 align="center">Do-It-Yourself (DIY) DevOps Dashboard<h2>
 
 <p align="center">
