@@ -22,6 +22,7 @@
 4. Build the Docker image by running the following command in the project directory:
 
 ```docker build -t diy-devops-dashboard .```
+
 <br>
 
 
