@@ -3,7 +3,7 @@
 
 ### Description
 
-I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. 
+I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. It requires setting up the basic technologies and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle.
 
 
 ### Prerequisites
@@ -11,16 +11,19 @@ I made this project as a way for those new to DevOps to get started with the bas
 GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the credentials placed in the .env file in order for the data from those platforms to display properly in the dashboard. Jenkins projects and Docker containers will also need to be present locally, for that data to be populated in the dashboard. THe Docker Engine must be running for the Docker commands below to be successful.
 
 
-1. Clone this repo
+### Installation
+
+
+Clone this repo
 ```git clone https://github.com/xanderstevenson/diy-devops-dashboard.git```
 
 <br>
 
-2. Go to GitHub -> Click your profile image in the upper-right -> Settings -> Developer Settings -> Personal access tokens and create a new token with the scope of repo, at least.
+Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
 
 <br>
 
-3. Place your token credentials in the .env-example file and rename it to .env
+Place your credentials from those accounts in the .env-example file and rename it to .env
 
 `GITHUB_USERNAME="your_username"`<br>
 `GITHUB_ACCESS_TOKEN="your_access_token"`<br>
