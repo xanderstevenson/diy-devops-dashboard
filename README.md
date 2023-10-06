@@ -27,7 +27,7 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 
 <br>
 
-4. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
+3. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
 
 <br>
 
@@ -54,3 +54,9 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 ```docker run --name diy-devops-dashboard -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 diy-devops-dashboard```
 
 This command starts the container and forwards the container's port 8000 to the host's port 8000, allowing you to access the web app at http://localhost:8000.
+
+<br>
+
+3. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
+
+![image](https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/713de122-8a0b-4596-afa7-ae0092703cc3)
