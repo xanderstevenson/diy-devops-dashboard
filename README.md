@@ -1,6 +1,6 @@
 
 # diy-devops-dashboard
-<h2>Do-It-Yourself (DIY) DevOps Dashboard<h2>
+<h2 align="center">Do-It-Yourself (DIY) DevOps Dashboard<h2>
 
 <p align="center">
 <img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/3fa23d01-5f42-42a2-98ff-50aba621be3f">
