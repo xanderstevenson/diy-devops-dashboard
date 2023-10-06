@@ -8,7 +8,7 @@ I made this project as a way for those new to DevOps to get started with the bas
 
 <br>
 
-<b>This project if for demos purposes only and should not be used in a production environment.</b>
+<b color="blue" align="center">This project if for demos purposes only and should not be used in a production environment.</b>
 
 <br>
 
