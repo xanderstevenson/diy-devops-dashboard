@@ -15,17 +15,19 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 
 ### Installation
 
+1. Create a virtual environment locally and activate it.
 
-1. Clone this repo
+2. Clone this repo and cd into it.
 ```git clone https://github.com/xanderstevenson/diy-devops-dashboard.git```
+```cd diy-devops-dashboard```
 
 <br>
 
-2. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
+4. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
 
 <br>
 
-3. Place your credentials from those accounts in the .env-example file and rename it to .env
+4. Place your credentials from those accounts in the .env-example file and rename it to .env
 
 `GITHUB_USERNAME="your_username"`<br>
 `GITHUB_ACCESS_TOKEN="your_access_token"`<br>
