@@ -1,6 +1,16 @@
 # diy-devops-dashboard
 ## Do-It-Yourself (DIY) DevOps Dashboard
 
+### Description
+
+I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. 
+
+
+### Prerequisites
+
+GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the credentials placed in the .env file in order for the data from those platforms to display properly in the dashboard. Jenkins projects and Docker containers will also need to be present locally, for that data to be populated in the dashboard. THe Docker Engine must be running for the Docker commands below to be successful.
+
+
 1. Clone this repo
 ```git clone https://github.com/xanderstevenson/diy-devops-dashboard.git```
 
