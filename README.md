@@ -62,3 +62,7 @@ This command starts the container and forwards the container's port 8000 to the 
 <p align="center">
 <img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/713de122-8a0b-4596-afa7-ae0092703cc3" width="700" align-content="center">
 </p>
+
+<br>
+
+4. To stop the container, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
