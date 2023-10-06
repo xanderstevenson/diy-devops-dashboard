@@ -9,7 +9,7 @@ body {
 
 body::before {
   content: "";
-  background-image: url("devops-cycle.png"); /* Replace 'your-image.jpg' with your image path */
+  background-image: url("devops-lifecycle.png"); /* Replace 'your-image.jpg' with your image path */
   background-size: cover; /* Scale the image to cover the entire body */
   background-position: center center; /* Center the image */
   opacity: 0.1; /* Set the opacity (0.0 - 1.0) */
@@ -237,25 +237,11 @@ a {
   background-color: #f0f0f0;
   padding-bottom: 30px;
   text-align: center;
-  height: 20px;
+  height: 15px;
   background: rgb(57, 71, 111);
   opacity: 0.5;
 }
 
-.disclaimer-left {
-  float: left;
-  font-size: 14px;
-  color: white;
-  padding: 5px;
-}
-
-.disclaimer-right {
-  float: right;
-  font-size: 14px;
-  color: white;
-  padding: 5px;
-  margin-right: 0px;
-}
 
 .github,
 .docker,

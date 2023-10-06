@@ -169,6 +169,7 @@ def fetch_jenkins_data():
             return jenkins_data
         else:
             print(f"Failed to fetch Jenkins data. Status code: {response.status_code}")
+            print(f"****** Failed to get Jenkins data, full results: {response.text}")
     except requests.exceptions.RequestException as e:
         print(f"Failed to connect to Jenkins: {e}")
 
