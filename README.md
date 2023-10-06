@@ -12,7 +12,8 @@ I made this project as a way for those new to DevOps to get started with the bas
 
 GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the credentials placed in the .env file in order for the data from those platforms to display properly in the dashboard. Jenkins projects and Docker containers will also need to be present locally, for that data to be populated in the dashboard. The Docker Engine must be running for the Docker commands below to be successful.
 
-This code has been successfully tested in Python 3.9.5
+- You will need Python installed. This code has been successfully tested in Python 3.9.5
+- Docker will need to be installed. I'm runnning [Docker Desktop](https://www.docker.com/products/docker-desktop/) on Mac.
 
 <br>
 
