@@ -8,12 +8,6 @@ I made this project as a way for those new to DevOps to get started with the bas
 
 <br>
 
-<p align="center">
-  <em><strong style="color: blue;">*** This project is for demo purposes only and should not be used in a production environment. ***</strong></em>
-</p>
-
-<br>
-
 ## Prerequisites
 
 GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the credentials placed in the .env file in order for the data from those platforms to display properly in the dashboard. Jenkins projects and Docker containers will also need to be present locally, for that data to be populated in the dashboard. THe Docker Engine must be running for the Docker commands below to be successful.
@@ -85,3 +79,11 @@ Text within each section that is surrounded by box is clickable and will take yo
 </p>
 
 More blocks for additional tools can be added to [templates/index.html](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/templates/index.html) and a additional functions would need to be added to [app.py](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/app.py)
+
+
+## Disclaimer
+<br>
+
+<p align="center">
+  <em><strong style="color: blue;">*** This project is for demo purposes only and should not be used in a production environment. ***</strong></em>
+</p>
