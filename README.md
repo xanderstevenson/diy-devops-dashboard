@@ -37,7 +37,7 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 
 <br>
 
-4. Place your credentials from those accounts in the [.env-example](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/.env-example) file and rename it to .env
+4. Create a file called .env in the same directory as app.py and place your credentials from those accounts into .env. The required credentials are listed in the [.env-example](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/.env-example) file. Do not place any credentials in .env-example!
 
 `GITHUB_USERNAME="your_username"`<br>
 `GITHUB_ACCESS_TOKEN="your_access_token"`<br>
