@@ -14,16 +14,16 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 ### Installation
 
 
-Clone this repo
+1. Clone this repo
 ```git clone https://github.com/xanderstevenson/diy-devops-dashboard.git```
 
 <br>
 
-Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
+2. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
 
 <br>
 
-Place your credentials from those accounts in the .env-example file and rename it to .env
+3. Place your credentials from those accounts in the .env-example file and rename it to .env
 
 `GITHUB_USERNAME="your_username"`<br>
 `GITHUB_ACCESS_TOKEN="your_access_token"`<br>
@@ -32,14 +32,16 @@ Place your credentials from those accounts in the .env-example file and rename i
 
 <br>
 
-4. Build the Docker image by running the following command in the project directory:
+### Usage
+
+1. Build the Docker image by running the following command in the project directory (make sure Docker Engine is running):
 
 ```docker build -t diy-devops-dashboard .```
 
 <br>
 
 
-5. Run the Docker container by executing the following. command:
+2. Run the Docker container by executing the following. command:
 
 ```docker run --name diy-devops-dashboard -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 diy-devops-dashboard```
 
