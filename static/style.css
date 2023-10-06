@@ -229,25 +229,10 @@ a {
   margin: 0px auto;
 }
 
-.disclaimer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f0f0f0;
-  padding-bottom: 30px;
-  text-align: center;
-  height: 15px;
-  background: rgb(57, 71, 111);
-  opacity: 0.5;
-}
-
-
 .github,
 .docker,
 .jenkins,
 .gitlab,
-.k8s,
 .terraform,
 .elastic {
   position: relative;
@@ -257,7 +242,6 @@ a {
 .docker::before,
 .jenkins::before,
 .gitlab::before,
-.k8s::before,
 .terraform::before,
 .elastic::before {
   content: "";
@@ -288,10 +272,6 @@ a {
 
 .gitlab::before {
   background-image: url("gitlab.png");
-}
-
-.k8s::before {
-  background-image: url("k8s.png");
 }
 
 .terraform::before {
