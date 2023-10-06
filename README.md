@@ -79,7 +79,7 @@ This command starts the container and forwards the container's port 8000 to the 
 
 ## Functionality
 
-Text within each section that is surrounded by box is clickable and will take you to the web page for that resource.
+Text within each section that is surrounded by a box is clickable and will take you to the web page for that resource.
 
 <p align="center">
 <img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a" width="500">
