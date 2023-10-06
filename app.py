@@ -1,15 +1,14 @@
-import docker
+# Standard library imports
+from datetime import datetime
 import json
-import os
+import time
+
+# Related third-party imports
+from decouple import config
+from flask import Flask, render_template
+import docker
 import requests
 import schedule
-import time
-from decouple import config
-from datetime import datetime
-from flask import Flask, render_template, current_app
-from kubernetes import client, config as kubernetes_config
-
-os.environ["KUBECONFIG"] = "/root/.kube/config"
 
 app = Flask(__name__)  # Create the Flask app instance
 
@@ -190,7 +189,6 @@ def fetch_terraform_data():
         # Send a GET request to fetch TFC organizations
         org_response = requests.get(org_url, headers=headers)
         if org_response.status_code == 200:
-            print("Got a successful response for organizations...")
             orgs_data = json.loads(org_response.content.decode("utf-8"))
 
             terraform_data = []
@@ -204,7 +202,6 @@ def fetch_terraform_data():
                 workspace_response = requests.get(workspace_url, headers=headers)
 
                 if workspace_response.status_code == 200:
-                    print(f"Got workspaces for organization {org_id}...")
                     workspaces_data = json.loads(
                         workspace_response.content.decode("utf-8")
                     )

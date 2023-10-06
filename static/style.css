@@ -149,7 +149,11 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 10px;
+  /* margin-top: 10px; */
+  margin: 0px auto;
+  padding: 10px;
+  max-width: 900px;
+  align-content: center;
 }
 
 .dashboard a {
