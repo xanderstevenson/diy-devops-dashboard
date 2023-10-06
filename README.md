@@ -2,8 +2,9 @@
 ## Do-It-Yourself (DIY) DevOps Dashboard
 
 1. Clone this repo
-
-`git clone https://github.com/xanderstevenson/diy-devops-dashboard.git`
+```
+git clone https://github.com/xanderstevenson/diy-devops-dashboard.git
+```
 
 <br>
 
