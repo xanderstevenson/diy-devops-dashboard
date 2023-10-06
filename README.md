@@ -44,6 +44,8 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 `...`<br>
 `...`
 
+The .env file is listed in the [.gitignore](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/.gitignore) file, so .env will not be pushed to GitHub if you decide to fork this project.
+
 <br>
 
 ## Usage
