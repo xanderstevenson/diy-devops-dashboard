@@ -41,7 +41,7 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 
 <br>
 
-### Usage
+## Usage
 
 1. Build the Docker image by running the following command in the project directory (make sure Docker Engine is running):
 
@@ -67,3 +67,12 @@ This command starts the container and forwards the container's port 8000 to the 
 <br>
 
 4. To stop the container, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
+
+<br>
+
+## Functionality
+
+Every text within each section that is surrounded by box is clickable and will take you to the web page for that resourc,
+
+![image](https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a)
+
