@@ -32,7 +32,6 @@ Flask-WTF==1.1.1
 future==0.18.3
 gedit==0.0.2
 gitdb==4.0.10
-gitlab==1.0.2
 GitPython==3.1.32
 graphviz==0.20.1
 greenlet==3.0.0
