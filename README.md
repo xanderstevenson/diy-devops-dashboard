@@ -8,6 +8,8 @@ I made this project as a way for those new to DevOps to get started with the bas
 
 This project runs a Flask App inside a Docker container, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
 
+Besides displaying all your DevOps data neatly organized in the dashboard, you can send the data to a Webex space via message by clicking the 'Post to Webex' button in the menu.
+
 <br>
 
 ## Prerequisites
