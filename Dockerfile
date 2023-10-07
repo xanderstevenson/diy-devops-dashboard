@@ -1,8 +1,8 @@
-# Stage 1: Build the application and generate Kubernetes resources
-FROM python:3.9-slim-buster as builder
+# Stage 1: Build the application
+FROM python:3.10-slim-buster as builder
 
-# Set environment variables
-ENV PYTHONUNBUFFERED 1
+# Install build dependencies
+RUN apt-get update && apt-get install -y build-essential
 
 # Set the working directory in the container
 WORKDIR /app
@@ -10,16 +10,15 @@ WORKDIR /app
 # Copy only the requirements file and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
 
 # Copy the rest of the project files to the container
 COPY . .
 
 # Stage 2: Create the final image
-FROM python:3.9-slim-buster
+FROM python:3.10-slim-buster
 
-# Set environment variables
-ENV PYTHONUNBUFFERED 1
+# Install build dependencies
+RUN apt-get update && apt-get install -y build-essential
 
 # Set the working directory in the container
 WORKDIR /app
@@ -27,7 +26,6 @@ WORKDIR /app
 # Copy only the requirements file and install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
 
 # Copy the application code from the builder stage
 COPY --from=builder /app /app
