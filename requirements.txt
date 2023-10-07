@@ -12,7 +12,7 @@ cleo==2.0.1
 click==8.1.7
 colorama==0.4.6
 crashtest==0.4.1
-cryptography==40.0.2
+cryptography==41.0.3
 deepdiff==6.6.0
 dill==0.3.7
 distlib==0.3.7
@@ -32,8 +32,6 @@ Flask-WTF==1.1.1
 future==0.18.3
 gedit==0.0.2
 gitdb==4.0.10
-GitPython==3.1.32
-graphviz==0.20.1
 greenlet==3.0.0
 html5lib==1.1
 idna==3.4
