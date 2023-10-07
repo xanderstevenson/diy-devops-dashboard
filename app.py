@@ -1,14 +1,12 @@
 # Standard library imports
-import base64
 from datetime import datetime
 import json
-import os
-import logging
 import time
 
 # Related third-party imports
 from decouple import config
 from flask import Flask, render_template, request
+from webexteamssdk import WebexTeamsAPI
 import docker
 import requests
 import schedule
@@ -276,26 +274,92 @@ def index():
         elastic_data=elastic_data,
     )
 
-@app.route('/screenshot', methods=['POST'])
-def handle_screenshot():
-    try:
-        image_data = request.form['image']
-        root_dir = os.path.abspath(os.path.dirname(__file__))
-        file_path = os.path.join(root_dir, 'screenshot.png')
 
-        # Save the image data to a file
-        with open(file_path, 'wb') as f:
-            f.write(image_data.split(",")[1].decode('base64'))
+@app.route("/post_to_webex")
+def post_to_webex():
+    # Grab token from .env
+    webex_token = config("WEBEX_TEAMS_ACCESS_TOKEN")
 
-        # Return a success response
-        return 'Screenshot saved'
+    # Define the space ID or email address of the space you want to post the data to
+    webex_space_id = config("WEBEX_TEAMS_SPACE_ID")
 
-    except Exception as e:
-        # Log the error
-        logging.exception(f'An error occurred: {str(e)}')
+    # Create a Webex Teams API instance
+    api = WebexTeamsAPI(access_token=webex_token)
 
-        # Return an error response
-        return 'Error occurred while saving the screenshot', 500
+    # Fetch the data you want to post
+    github_data = fetch_github_data()
+    docker_data = fetch_docker_data()
+    gitlab_data = fetch_gitlab_data()
+    jenkins_data = fetch_jenkins_data()
+    terraform_data = fetch_terraform_data()
+    elastic_data = fetch_elastic_data()
+
+    # Format the message with the fetched data
+    message = "DIY DevOps Dashboard:\n\n"
+
+    # GitHub data
+    message += "GitHub Repositories and Latest Commits:\n\n"
+    for i, repo in enumerate(github_data[:5]):
+        message += f"- [{repo['name']}]({repo['url']})\n"
+        if "latest_commit_date" in repo and repo["latest_commit_date"]:
+            message += f"Latest Commit: {repo['latest_commit_date']}\n"
+        else:
+            message += "Latest Commit: No commits\n"
+        message += "\n"
+
+    # Docker data
+    message += "Docker Containers:\n\n"
+    for i, container in enumerate(docker_data[:5]):
+        message += f"- Name: {container['name']}\n"
+        message += f"  Status: {container['status']}\n"
+        message += "\n"
+
+    # GitLab data
+    message += "GitLab Projects and Last Activity:\n\n"
+    for i, project in enumerate(gitlab_data[:5]):
+        message += f"- [{project['name']}]({project['web_url']})\n"
+        message += f"  Last Activity: {project['last_activity_at_mdy']} {project['last_activity_at_hms']}\n"
+        message += "\n"
+
+    # Jenkins data
+    message += "Jenkins Builds:\n"
+    for build in jenkins_data['jobs']:
+        if 'name' in build and 'url' in build:
+            message += f"\n- [{build['name']}]({build['url']})<br>\n"
+            message += f"\n  Status: {build['color']}\n"
+    message += "\n"
+
+    # Terraform data
+    message += "Terraform Organizations and Workspaces:\n\n"
+    for org in terraform_data:
+        if 'id' in org:
+            message += f"- Organization: {org['id']}\n"
+            message += "  Workspaces:\n"
+            for workspace in org["workspaces"]:
+                if 'attributes' in workspace and 'name' in workspace['attributes']:
+                    message += f"  - [{workspace['attributes']['name']}](https://app.terraform.io/app/{org['id']}/workspaces/{workspace['attributes']['name']})\n"
+                    # Include more workspace details if needed
+        message += "\n"
+
+    # Elastic Cloud data
+    message += "Elastic Cloud Deployments:\n\n"
+    for deployment in elastic_data["deployments"]:
+        if "name" in deployment:
+            message += f"- Deployment: {deployment['name']}\n"
+            message += "  Resources:\n"
+            if "resources" in deployment:
+                for resource in deployment["resources"]:
+                    if "ref_id" in resource:
+                        message += f"    • Ref ID: {resource['ref_id']}\n"
+                    # Include more resource details if needed
+        message += "\n"
+
+    # Post the message to the space
+    api.messages.create(roomId=webex_space_id, markdown=message)
+
+    return "Data posted to Webex Teams"
+
+ 
 
 
 if __name__ == "__main__":

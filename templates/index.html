@@ -16,7 +16,7 @@
                 <div class="line"></div>
             </div>
             <ul class="menu" id="menu">
-                <li><button id="captureButton" onclick="captureScreenshot()">Capture Screenshot</button></li>
+                <li class="webex-button"><button onclick="postToWebex()">Post to Webex</button></li>
             </ul>
         </nav>
         <h1 id="devops-dash" class="center-this">DIY DevOps Dashboard</h1>
@@ -168,26 +168,21 @@
         refreshButton.addEventListener('click', function () {
             location.reload();
         });
-
-        // Hande Screen capture
-        function captureScreenshot() {
-            html2canvas(document.body).then(function(canvas) {
-                // Convert the canvas to an image
-                var image = canvas.toDataURL();
-
-                // Send the image data to the server using Ajax or a form submission
-                // You can use JavaScript libraries like Axios or jQuery for Ajax requests
-
-                // Example using jQuery:
-                $.ajax({
-                    type: "POST",
-                    url: "/screenshot",
-                    data: { image: image },
-                    success: function(response) {
-                        // Handle the response from the server if needed
+    </script>
+    <script>
+        function postToWebex() {
+            fetch("/post_to_webex")
+                .then(response => {
+                    if (response.ok) {
+                        console.log("Data posted to Webex Teams");
+                        hideButtonAndMenus();
+                    } else {
+                        console.error("Failed to post data to Webex Teams");
                     }
+                })
+                .catch(error => {
+                    console.error("Failed to post data to Webex Teams:", error);
                 });
-            });
         }
 
     </script>
