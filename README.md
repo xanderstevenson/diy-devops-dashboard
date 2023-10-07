@@ -98,7 +98,7 @@ This command starts the container and forwards the container's port 8000 to the 
 - The entire page will reload every 5 minutes, thanks to the JavaScript at the bottom of /templates/index.html. You can also refresh the page manually by clicking on the "Refresh" button under the marquee at the top of the page.
 
 <p align="center">
-<img width="400" src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/afba8a5a-f0ab-4d79-84b2-b8ae58d8bf21">
+<img width="500" src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/afba8a5a-f0ab-4d79-84b2-b8ae58d8bf21">
 </p>
 
 Both actions reload the data to be presented.
