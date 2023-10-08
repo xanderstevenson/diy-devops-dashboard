@@ -159,7 +159,7 @@ def fetch_jenkins_data():
     try:
         # Use host.docker.internal to access Jenkins on the host machine
         response = requests.get(
-            "http://host.docker.internal:8080/api/json",
+            "http://127.0.0.1:8080/api/json",
             auth=(
                 "alexstev",
                 jenkins_api_token,
@@ -323,8 +323,8 @@ def post_to_webex():
 
     # Jenkins data
     message += "Jenkins Builds:\n"
-    for build in jenkins_data['jobs']:
-        if 'name' in build and 'url' in build:
+    for build in jenkins_data["jobs"]:
+        if "name" in build and "url" in build:
             message += f"\n- [{build['name']}]({build['url']})<br>\n"
             message += f"\n  Status: {build['color']}\n"
     message += "\n"
@@ -332,11 +332,11 @@ def post_to_webex():
     # Terraform data
     message += "Terraform Organizations and Workspaces:\n\n"
     for org in terraform_data:
-        if 'id' in org:
+        if "id" in org:
             message += f"- Organization: {org['id']}\n"
             message += "  Workspaces:\n"
             for workspace in org["workspaces"]:
-                if 'attributes' in workspace and 'name' in workspace['attributes']:
+                if "attributes" in workspace and "name" in workspace["attributes"]:
                     message += f"  - [{workspace['attributes']['name']}](https://app.terraform.io/app/{org['id']}/workspaces/{workspace['attributes']['name']})\n"
                     # Include more workspace details if needed
         message += "\n"
@@ -359,16 +359,14 @@ def post_to_webex():
 
     return "Data posted to Webex Teams"
 
- 
-
 
 if __name__ == "__main__":
-#     schedule.every(5).minutes.do(fetch_github_data)
-#     schedule.every(5).minutes.do(fetch_docker_data)
-#     schedule.every(5).minutes.do(fetch_gitlab_data)
-#     schedule.every(5).minutes.do(fetch_jenkins_data)
-#     schedule.every(5).minutes.do(fetch_terraform_data)
-#     schedule.every(5).minutes.do(fetch_elastic_data)
+    #     schedule.every(5).minutes.do(fetch_github_data)
+    #     schedule.every(5).minutes.do(fetch_docker_data)
+    #     schedule.every(5).minutes.do(fetch_gitlab_data)
+    #     schedule.every(5).minutes.do(fetch_jenkins_data)
+    #     schedule.every(5).minutes.do(fetch_terraform_data)
+    #     schedule.every(5).minutes.do(fetch_elastic_data)
 
     import threading
 

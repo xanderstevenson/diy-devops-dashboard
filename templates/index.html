@@ -48,7 +48,7 @@
                 {% for container in docker_data %}
                 <ul class="repo-list one-px-border" style="padding-top: 5px;">
                     <h3>
-                        <li class="container-name">{{ container.name }}</a>
+                        <li class="docker-container-name">{{ container.name }}</a>
                         </li>
                     </h3>
                     <li>{{ container.container_id }}</li>
@@ -184,7 +184,6 @@
                     console.error("Failed to post data to Webex Teams:", error);
                 });
         }
-
     </script>
 
 </body>

@@ -227,6 +227,14 @@ a {
   color: rgb(14, 14, 14);
 }
 
+.docker-container-name {
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(13, 21, 55);
+  padding: 2.5px;
+  padding-top: -10px;
+}
+
 .container-text-box {
   padding: 3px;
   width: 75px;
