@@ -6,7 +6,7 @@
 
 I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. It requires setting up the basic accounts and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle.
 
-This project runs a Flask App inside a Docker container, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
+This project runs as a Flask App, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
 
 Besides displaying all your DevOps data neatly organized in the dashboard, you can send the data to a Webex space via message by clicking the 'Post to Webex' button in the menu.
 
@@ -109,6 +109,8 @@ Both actions reload the data to be presented.
 
 <br>
 
+- A duplicate of this project exists, but which runs entirely in a Docker container. That project can be found at. The reason I created this version that runs without the Docker container is that I was having issues getting it to pass the vulnerability scanning for acceptance as a Cisco Code Exchange repo.
+
 ## Disclaimer
 
 <br>
@@ -116,3 +118,4 @@ Both actions reload the data to be presented.
 <p align="center">
   <em><strong style="color: blue;">This project is for demo purposes only and should not be used in a production environment.</strong></em>
 </p>
+
