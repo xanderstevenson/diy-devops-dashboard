@@ -6,11 +6,11 @@
 
 I made this project as a way for those new to DevOps to get started with the basic technologies invlolved. It requires setting up the basic accounts and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle.
 
-This project runs as a Flask App, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
+This project runs a Flask App inside a Docker container, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
 
 Besides displaying all your DevOps data neatly organized in the dashboard, you can send the data to a Webex space via message by clicking the 'Post to Webex' button in the menu.
 
-<br> 
+<br>
 
 ## Prerequisites
 
@@ -59,14 +59,11 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 <br>
 
 
-2. Run the Flask app:
+2. Run the Docker container by executing the following. command:
 
-```python3 app.py```
+```docker run --name diy-devops-dashboard -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 diy-devops-dashboard```
 
-or
-
-```python app.py```
-
+This command starts the container and forwards the container's port 8000 to the host's port 8000, allowing you to access the web app at http://localhost:8000.
 
 <br>
 
@@ -78,7 +75,7 @@ or
 
 <br>
 
-4. To stop the app, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
+4. To stop the container, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
 
 <br>
 
@@ -112,13 +109,14 @@ Both actions reload the data to be presented.
 
 <br>
 
-- A duplicate of this project exists, but which runs entirely in a Docker container. That project can be found at [diy-devops-dashboard-in-docker](https://github.com/xanderstevenson/diy-devops-dashboard-in-docker/tree/main). The reason I created this version that runs without the Docker container is that I was having issues getting the one with the Docker container to pass the vulnerability scanning for acceptance as a Cisco Code Exchange repo.
-
-<br>
-
 ## Disclaimer
 
 <br>
+
+<p align="center">
+  <em><strong style="color: blue;">This project is for demo purposes only and should not be used in a production environment.</strong></em>
+</p>
+
 
 <p align="center">
   <em><strong style="color: blue;">This project is for demo purposes only and should not be used in a production environment.</strong></em>
