@@ -66,7 +66,7 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 
 
 
-3. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
+2. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
 
 <p align="center">
 <img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/713de122-8a0b-4596-afa7-ae0092703cc3" width="700">
@@ -74,7 +74,8 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 
 <br>
 
-4. To stop the container, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
+
+3. To stop the container, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
 
 <br>
 
