@@ -35,11 +35,17 @@ GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the cr
 
 <br>
 
-3. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
+3. Install the required dependencies
+
+```pip install -r requirements.txt```
 
 <br>
 
-4. Create a file called .env in the same directory as app.py and place your credentials from those accounts into .env. The required credentials are listed in the [.env-example](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/.env-example) file. Do not place any credentials in .env-example!
+4. Make sure you have account set-up with [GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Terraform](https://app.terraform.io/), and [Elastic Cloud](https://www.elastic.co/cloud/)
+
+<br>
+
+5. Create a file called .env in the same directory as app.py and place your credentials from those accounts into .env. The required credentials are listed in the [.env-example](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/.env-example) file. Do not place any credentials in .env-example!
 
 `GITHUB_USERNAME="your_username"`<br>
 `GITHUB_ACCESS_TOKEN="your_access_token"`<br>
@@ -54,13 +60,10 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 
 1. Run the Flask app from the project root directory
 
-```python3 app.py```
-
-or
-
-```python app.py```   
+```python3 app.py``` or ```python app.py```   
 
 <br>
+
 
 
 3. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
