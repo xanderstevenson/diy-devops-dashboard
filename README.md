@@ -59,11 +59,14 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 <br>
 
 
-2. Run the Docker container by executing the following. command:
+2. Run the Flask app:
 
-```docker run --name diy-devops-dashboard -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 diy-devops-dashboard```
+```python3 app.py```
 
-This command starts the container and forwards the container's port 8000 to the host's port 8000, allowing you to access the web app at http://localhost:8000.
+or
+
+```python app.py```
+
 
 <br>
 
@@ -75,7 +78,7 @@ This command starts the container and forwards the container's port 8000 to the 
 
 <br>
 
-4. To stop the container, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
+4. To stop the app, type Ctrl + C one or twice in the virtual directory in which you ran the docker commands.
 
 <br>
 
