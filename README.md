@@ -52,20 +52,16 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 
 ## Usage
 
-1. Build the Docker image by running the following command in the project directory (make sure Docker Engine is running):
+1. Run the Flask app from the project root directory
 
-```docker build -t diy-devops-dashboard .```
+```python3 app.py```
 
-<br>
+or
 
-
-2. Run the Docker container by executing the following. command:
-
-```docker run --name diy-devops-dashboard -v /var/run/docker.sock:/var/run/docker.sock -p 8000:8000 diy-devops-dashboard```
-
-This command starts the container and forwards the container's port 8000 to the host's port 8000, allowing you to access the web app at http://localhost:8000.
+```python app.py```   
 
 <br>
+
 
 3. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
 
