@@ -10,7 +10,7 @@ This project runs as a Flask App, which serves the web dashboard. It is written 
 
 Besides displaying all your DevOps data neatly organized in the dashboard, you can send the data to a Webex space via message by clicking the 'Post to Webex' button in the menu.
 
-<br>
+<br> 
 
 ## Prerequisites
 
@@ -109,7 +109,7 @@ Both actions reload the data to be presented.
 
 <br>
 
-- A duplicate of this project exists, but which runs entirely in a Docker container. That project can be found at. The reason I created this version that runs without the Docker container is that I was having issues getting it to pass the vulnerability scanning for acceptance as a Cisco Code Exchange repo.
+- A duplicate of this project exists, but which runs entirely in a Docker container. That project can be found at [diy-devops-dashboard-in-docker](https://github.com/xanderstevenson/diy-devops-dashboard-in-docker/tree/main). The reason I created this version that runs without the Docker container is that I was having issues getting the one with the Docker container to pass the vulnerability scanning for acceptance as a Cisco Code Exchange repo.
 
 <br>
 
