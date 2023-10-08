@@ -13,9 +13,10 @@ packaging==23.2
 PyJWT==2.8.0
 python-decouple==3.8
 requests==2.31.0
-requests-toolbelt==1.0.0
+requests-toolbelt==0.10.1
 schedule==1.2.1
-urllib3==2.0.6
+setuptools==65.5.1
+urllib3==1.26.17
 webexteamssdk==1.6.1
 websocket-client==1.6.4
 Werkzeug==3.0.0
