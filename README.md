@@ -117,8 +117,3 @@ Both actions reload the data to be presented.
   <em><strong style="color: blue;">This project is for demo purposes only and should not be used in a production environment.</strong></em>
 </p>
 
-
-<p align="center">
-  <em><strong style="color: blue;">This project is for demo purposes only and should not be used in a production environment.</strong></em>
-</p>
-
