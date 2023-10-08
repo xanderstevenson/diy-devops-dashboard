@@ -111,6 +111,8 @@ Both actions reload the data to be presented.
 
 - A duplicate of this project exists, but which runs entirely in a Docker container. That project can be found at. The reason I created this version that runs without the Docker container is that I was having issues getting it to pass the vulnerability scanning for acceptance as a Cisco Code Exchange repo.
 
+<br>
+
 ## Disclaimer
 
 <br>
