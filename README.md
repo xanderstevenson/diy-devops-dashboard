@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/3fa23d01-5f42-42a2-98ff-50aba621be3f"></p>
 
-<p align="center"><img src="https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/xanderstevenson/diy-devops-dashboard)"></p>
+<p align="center"><img src="https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg"></p>
 
 <br> 
 
