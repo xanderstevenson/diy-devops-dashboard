@@ -118,7 +118,7 @@ Both actions reload the data to be presented.
 
 <video width="560" height="315" src="https://www.youtube.com/embed/fzBCqMisNcU?si=qtjjIXoAPfGMeMNR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></video>
 
-![DevOps Dashboards featuring DIY DevOps Dashboard](https://www.youtube.com/watch?v=fzBCqMisNcU)
+[![DevOps Dashboards featuring DIY DevOps Dashboard](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/small-devops-dashboard-thumbnail.png)](https://www.youtube.com/watch?v=fzBCqMisNcU)
 
 You can find out more about the DIY DevOps Dashboard on Cisco Code Exchange: http://cs.co/diy-devops-dashboard
 
