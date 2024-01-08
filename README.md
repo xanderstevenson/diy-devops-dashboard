@@ -120,6 +120,7 @@ Both actions reload the data to be presented.
 <a href="https://www.youtube.com/watch?v=fzBCqMisNcU" target="_blank">
   <img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/small-devops-dashboard-thumbnail.png" alt="DevOps Dashboards featuring DIY DevOps Dashboard" width="500"/>
 </a>
+  Click on the image to watch the video
 </p>
 <br>
 
