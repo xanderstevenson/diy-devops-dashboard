@@ -119,7 +119,7 @@ Both actions reload the data to be presented.
 [![DevOps Dashboards featuring DIY DevOps Dashboard](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/small-devops-dashboard-thumbnail.png)](https://www.youtube.com/watch?v=fzBCqMisNcU)
 
 <a href="https://www.youtube.com/watch?v=fzBCqMisNcU">
-  <img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/small-devops-dashboard-thumbnail.png" alt="DevOps Dashboards featuring DIY DevOps Dashboard" width="200" height="200"/>
+  <img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/small-devops-dashboard-thumbnail.png" alt="DevOps Dashboards featuring DIY DevOps Dashboard" width="500"/>
 </a>
 
 You can find out more about the DIY DevOps Dashboard on Cisco Code Exchange: http://cs.co/diy-devops-dashboard
