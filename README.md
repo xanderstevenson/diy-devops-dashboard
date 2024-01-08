@@ -112,6 +112,18 @@ Both actions reload the data to be presented.
 
 <br>
 
+## Video: DevOps Dashboards featuring DIY DevOps Dashboard
+
+- In this video we present an overview of DevOps Dashboards, including their definition and purpose, as well as their key components and functionality. Next, we discuss 5 popular DevOps Dashboard platforms, listing their main features, as well as their advantages and disadvantages. Then, we explore the key takeaways and considerations for choosing a suitable DevOps Dashboard. Finally, we explore the DIY DevOps Dashboard, a dashboard I’ve put together, which is an excellent starting point for those new to DevOps. It helps learners organize their DevOps tools in one place to observe their statuses and to better understand how they work together in a DevOps lifecycle.
+
+You can find out more about the DIY DevOps Dashboard on Cisco Code Exchange: http://cs.co/diy-devops-dashboard
+
+Don’t forget to check out the DevOps Group Hub on the Cisco Community: https://cs.co/devops-community
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fzBCqMisNcU?si=qtjjIXoAPfGMeMNR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<br> 
+
 ## Disclaimer
 
 <br>
