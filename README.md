@@ -7,7 +7,7 @@
 
 I made this project as a way for those new to DevOps to get started with the basic technologies involved. It requires setting up the basic accounts and then provides the user with an all-in-one place to see their progress and to better understand how these different tools interact in the DevOps lifecycle.
 
-This project runs a Flask App inside a Docker container, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
+This project runs a Flask App, which serves the web dashboard. It is written in Python and most of the data is collected via external API calls, with Docker and Jenkins data being collected straight from your machine.
 
 Besides displaying all your DevOps data neatly organized in the dashboard, you can send the data to a Webex space via message by clicking the 'Post to Webex' button in the menu.
 
@@ -20,7 +20,7 @@ _This project runs as a Flask app. The original project, [diy-devops-dashboard-i
 GitHub, GitLab, Terraform, and Elastic-Cloud accounts must be created and the credentials placed in the .env file in order for the data from those platforms to display properly in the dashboard. Jenkins projects and Docker containers will also need to be present locally, for that data to be populated in the dashboard. 
 
 - You will need [Python](https://www.python.org/downloads/) installed. This code has been successfully tested in Python 3.9.5
-- Docker will need to be installed. I'm runnning [Docker Desktop](https://www.docker.com/products/docker-desktop/) on Mac. The Docker Engine must be running for the dashboard to load.
+- Docker will need to be installed. I'm running [Docker Desktop](https://www.docker.com/products/docker-desktop/) on Mac. The Docker Engine must be running for the dashboard to load.
 
 <br>
 
