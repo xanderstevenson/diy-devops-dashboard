@@ -82,12 +82,6 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 
 <br>
 
-### Flow chart
-
-<p align="center">
-<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="700">
-</p>
-<br>
 
 ### Functionality
 
@@ -136,6 +130,13 @@ You can find out more about the DIY DevOps Dashboard on Cisco Code Exchange: htt
 Don’t forget to check out the DevOps Group Hub on the Cisco Community: https://cs.co/devops-community
 
 <br> 
+
+## Flow chart
+
+<p align="center">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="700">
+</p>
+<br>
 
 ## Disclaimer
 
