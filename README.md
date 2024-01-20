@@ -87,7 +87,7 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 <p align="center">
 <img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="700">
 </p>
-
+<br>
 
 ### Functionality
 
