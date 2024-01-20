@@ -134,7 +134,7 @@ Don’t forget to check out the DevOps Group Hub on the Cisco Community: https:/
 ## Flow chart
 
 <p align="center">
-<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="700">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="800">
 </p>
 <br>
 
