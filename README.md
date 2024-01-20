@@ -82,6 +82,14 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 
 <br>
 
+### Flow chart
+
+<p align="center">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a" width="500">
+</p>
+<br>
+
+
 ### Functionality
 
 - Text within each section that is surrounded by a box is clickable and will take you to the web page for that resource.
