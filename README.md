@@ -85,10 +85,8 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 ### Flow chart
 
 <p align="center">
-<img src="https://github.com/xanderstevenson/diy-devops-dashboard/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="500">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png" width="700">
 </p>
-<br>
-![DIY DevOps Dashboard Diagram](https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/DIY-DevOps-Dashboard-diagram2.drawio.png)
 
 
 ### Functionality
