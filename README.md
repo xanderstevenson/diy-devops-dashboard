@@ -88,13 +88,13 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 - Text within each section that is surrounded by a box is clickable and will take you to the web page for that resource.
 
 <p align="center">
-<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/7e46a9a4-14de-4239-8ef5-8dc06e2e029a" width="500">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/site/Functionality1.png" width="500">
 </p>
 <br>
 
 - By clicking on the hamburger menu icon on the top left, you can view the button to 'Post to Webex'. Push this once and it will send the data for this dashboard, truncated to five results per tool, to the Webex space indicated in the .env file. This will take up to 15 seconds. To make the button disappear, click on the hamburger menu icon again.
 
-<p align="center"><img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/2bf9c2b9-6a58-429d-bc14-6454b8f21ca4" width="400">
+<p align="center"><img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/site/Functionality2.png" width="400">
 </p>
 
 <br>
@@ -102,7 +102,7 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 - The entire page will reload every 5 minutes, thanks to the JavaScript at the bottom of /templates/index.html. You can also refresh the page manually by clicking on the "Refresh" button under the marquee at the top of the page.
 
 <p align="center">
-<img width="400" src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/afba8a5a-f0ab-4d79-84b2-b8ae58d8bf21">
+<img width="400" src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/site/Functionality3.png">
 </p>
 
 Both actions reload the data to be presented.
