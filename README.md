@@ -72,7 +72,7 @@ _*** The .env file is listed in the [.gitignore](https://github.com/xandersteven
 2. Navigate to http://127.0.0.1:8000 or http://localhost:8000 to view the dashboard
 
 <p align="center">
-<img src="https://github.com/xanderstevenson/diy-devops-dashboard/assets/27918923/713de122-8a0b-4596-afa7-ae0092703cc3" width="700">
+<img src="https://github.com/xanderstevenson/diy-devops-dashboard/blob/main/static/site/Dashboard.png" width="700">
 </p>
 
 <br>
